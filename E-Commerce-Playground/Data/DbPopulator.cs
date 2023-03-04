@@ -105,23 +105,23 @@ namespace E_Commerce_Playground.Data
                     {
                         new Stores_Products()
                         {
-                            StoreId= 0,
-                            ProductId= 0,
+                            StoreId= 1,
+                            ProductId= 1,
                         },
                         new Stores_Products()
                         {
-                            StoreId= 0,
-                            ProductId= 1,
+                            StoreId= 1,
+                            ProductId= 2,
                         },
                          new Stores_Products()
                         {
-                            StoreId= 1,
-                            ProductId= 0,
+                            StoreId= 2,
+                            ProductId= 1,
                         },
                           new Stores_Products()
                         {
-                            StoreId= 1,
-                            ProductId= 1,
+                            StoreId= 2,
+                            ProductId= 2,
                         },
                     });
                     context.SaveChanges();
@@ -135,13 +135,17 @@ namespace E_Commerce_Playground.Data
                         {
                             UserName = "Admin",
                             Password = "Admin",
-                            Email = "na@dmin0.poshtata"
+                            Email = "na@dmin0.poshtata",
+                            PhoneNumber = "000000000",
+                             ProfilePictureURL = "asd"
                         },
                         new User()
                         {
                             UserName = "user",
                             Password = "asdasd",
-                            Email = "p0sht@.me"
+                            Email = "p0sht@.me",
+                            PhoneNumber = "00000000",
+                            ProfilePictureURL = "asds"
                         },
                     });
                     context.SaveChanges();
