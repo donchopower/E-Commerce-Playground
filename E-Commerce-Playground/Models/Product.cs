@@ -7,7 +7,7 @@ namespace E_Commerce_Playground.Models
     {
         [Key]
         public int Id { get; set; }
-
+        [Display(Name = "ProductPictureURL")]
         public string ProductPictureURL { get; set; }
         [Required]
         public string ProductName { get; set; }

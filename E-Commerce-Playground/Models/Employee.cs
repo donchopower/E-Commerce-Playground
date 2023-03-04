@@ -10,6 +10,7 @@ namespace E_Commerce_Playground.Models
         public int EmployeeId { get; set; }
 
         [Required]
+        [Display(Name = "Firstname")]
         public string Firstname { get; set; }
         [Required]
         public string Lastname { get; set; }

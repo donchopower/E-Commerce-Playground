@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["title"] = "List of Products";
+}
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+            <table>
+                <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.ProductPictureURL)</th>
+                </tr>
+
+                </thead>
+               
+                <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            <img class="rounded-circle" src="@item.ProductPictureURL">
+                        </td>
+                    </tr>
+                }
+                
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+    </div>
