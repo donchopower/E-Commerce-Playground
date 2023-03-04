@@ -12,18 +12,30 @@
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.ProductPictureURL)</th>
                 </tr>
+                <tr>
+                    <th><button</th>
+                </tr>
 
                 </thead>
                
                 <tbody>
-                @foreach(var item in Model)
-                {
-                    <tr>
-                        <td class="align-middle">
-                            <img class="rounded-circle" src="@item.ProductPictureURL">
-                        </td>
-                    </tr>
-                }
+                
+               
+                    @foreach (var item in Model)
+                    {
+                      <tr>
+                          <th>
+                            <div class="align-items-lg-start"> <img class="rounded-circle" src="@item.ProductPictureURL"></img></div>
+                          </th>
+                      </tr>
+                      <tr>
+                          <div class="text-black"><h1>@item.ProductName</h1></div> 
+                      </tr>
+                           
+
+
+                       
+                    }
                 
 
                 </tbody>

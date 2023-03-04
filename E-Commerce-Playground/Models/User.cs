@@ -21,6 +21,8 @@ namespace E_Commerce_Playground.Models
 
         public string ProfilePictureURL { get; set; }
 
+        
+
 
 
     }
