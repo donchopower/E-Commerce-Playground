@@ -35,7 +35,7 @@ namespace E_Commerce_Playground.Controllers
             var data = _context.Users.ToList();
             foreach(var item in data)
             {
-                if (item.Email.Contains(input.Email) && item.Email.Contains(input.Password))
+                if (item.Email.Contains(input.Email) && item.Password.Contains(input.Password))
                 {
                     return View();
                 }
