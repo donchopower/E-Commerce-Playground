@@ -10,7 +10,7 @@ using System.Security.Claims;
 
 public class AccountController : Controller
 {
-    public async Task Login(string returnUrl = "/")
+    public async Task Login(string returnUrl = "/Game")
     {
         var authenticationProperties = new LoginAuthenticationPropertiesBuilder()
             .WithRedirectUri(returnUrl)

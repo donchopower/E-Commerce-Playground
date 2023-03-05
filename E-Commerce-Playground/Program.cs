@@ -2,12 +2,21 @@ using E_Commerce_Playground.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Auth0.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication;
+using System.IdentityModel.Tokens.Jwt;
+
+
+
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
 builder.Services.AddAuth0WebAppAuthentication(option =>
 {
     option.Domain = builder.Configuration["Auth0:Domain"];
