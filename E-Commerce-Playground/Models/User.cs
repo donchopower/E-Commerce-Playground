@@ -11,10 +11,12 @@ namespace E_Commerce_Playground.Models
         [Required]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please enter your password!", AllowEmptyStrings = false)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please provide email address!", AllowEmptyStrings =false)]
+        
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
