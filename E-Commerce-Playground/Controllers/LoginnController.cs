@@ -3,6 +3,7 @@ using E_Commerce_Playground.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 
 namespace E_Commerce_Playground.Controllers
 {
@@ -19,16 +20,39 @@ namespace E_Commerce_Playground.Controllers
         {
             return View();
         }
+        //public void FindThisForMe()
+        //{
+        //    var data = _context.Users.ToList();
+        //    if (data[0].Email)
 
+        //}
 
-
-        public IActionResult Login()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(User user)
         {
-            return View();
+            var input = user;
+            var data = _context.Users.ToList();
+            foreach(var item in data)
+            {
+                if (item.Email.Contains(input.Email) && item.Email.Contains(input.Password))
+                {
+                    return View();
+                }
+                return RedirectToAction("Index");
+            }
+
+
+            return RedirectToAction("Redirect");
+
+
         }
 
 
-
+        public IActionResult Redirect()
+        {
+            return View();
+        }
 
 
 

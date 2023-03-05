@@ -1,9 +1,9 @@
-﻿
+﻿@model User
 
 <body>
 
 
-<div>
+@**<div>
     <h1>kyp</h1>
         <form method="post" action="/Loginn/Login">
             <div>
@@ -28,9 +28,12 @@
 
 
 </div>
+   *@
 <div>
     <form asp-controller="Loginn" asp-action="Login" method="post">
-
+        Email: <input asp-for="Email" /><br />
+        Password: <input asp-for="Password" /><br />
+        <button type="submit">Login</button>
     </form>
 </div>
 </body>
