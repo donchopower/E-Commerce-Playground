@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Product>
 
 @{
-    ViewData["title"] = "List of Products";
+    ViewData["title"] = "List of User";
 }
 
     <div class="row">
@@ -9,9 +9,7 @@
 
             <table>
                 <thead>
-                <tr>
-                    <th>@Html.DisplayNameFor(model => model.ProductPictureURL)</th>
-                </tr>
+               
 
                 </thead>
                
@@ -20,13 +18,19 @@
                
                     @foreach (var item in Model)
                     {
+                     <div class="row-cols-auto > * {
+  flex: 0 0 auto;
+  width: auto;"> 
+                             <div class="align-content-start align-items-sm-start"> <img class="rounded-circle" src="@item.ProductPictureURL"></img></div>
+                       
+                            <div class="text-black align-content-end"><h1>@item.ProductName</h1></div>
+                       
+                          </div>
+                    <tr>
+                        <div class="text-black"><h1>@item.Category</h1></div>
+                    </tr>
                       <tr>
-                          <th>
-                            <div class="align-items-lg-start"> <img class="rounded-circle" src="@item.ProductPictureURL"></img></div>
-                          </th>
-                      </tr>
-                      <tr>
-                          <div class="text-black"><h1>@item.ProductName</h1></div> 
+                          <div class="text-black"><h1>Quantity: @item.Quantity</h1></div>
                       </tr>
                            
 

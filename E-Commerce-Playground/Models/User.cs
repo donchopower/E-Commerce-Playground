@@ -9,6 +9,7 @@ namespace E_Commerce_Playground.Models
         public int UserId { get; set; }
 
         [Required]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage ="Please enter your password!", AllowEmptyStrings = false)]

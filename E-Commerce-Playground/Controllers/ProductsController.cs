@@ -18,5 +18,7 @@ namespace E_Commerce_Playground.Controllers
 
             return View(data);
         }
+
+
     }
 }
