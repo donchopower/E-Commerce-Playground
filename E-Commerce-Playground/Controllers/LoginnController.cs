@@ -14,14 +14,14 @@ namespace E_Commerce_Playground.Controllers
     public class LoginnController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly HttpResponseMessage _message;
+
 
 
 
         public LoginnController(AppDbContext context)
         {
             _context = context;
-         
+
 
         }
 
@@ -29,30 +29,29 @@ namespace E_Commerce_Playground.Controllers
         {
             return View();
         }
-        //public void FindThisForMe()
-        //{
-        //    var data = _context.Users.ToList();
-        //    if (data[0].Email)
 
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task< IActionResult> Login(User user)
+        public async Task<IActionResult> Login(User user)
         {
             var input = user;
             var data = _context.Users.ToList();
-            foreach(var item in data)
+            foreach (var item in data)
             {
                 if (item.UserName.Contains(input.UserName) && item.Password.Contains(input.Password))
                 {
+
+
                     var options = new CookieOptions();
-                    
-                        options.IsEssential = true;
+
+                    options.IsEssential = true;
                     options.Expires = DateTimeOffset.UtcNow.AddMinutes(5);
                     options.Secure = true;
+
+
                     HttpContext.Response.Cookies.Append("MyCookie", input.UserName, options);
-                    
+
                     return View();
                 }
                 return RedirectToAction("Index");
@@ -64,6 +63,10 @@ namespace E_Commerce_Playground.Controllers
 
         }
 
+       
+
+       
+
 
         public IActionResult Redirect()
         {
@@ -71,7 +74,14 @@ namespace E_Commerce_Playground.Controllers
         }
 
 
+        public IActionResult Logout()
+        {
+            var options = new CookieOptions();
+          
 
+            HttpContext.Response.Cookies.Delete("MyCookie", options);
+            return Index();
+        }
 
 
 

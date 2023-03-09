@@ -1,28 +1,24 @@
 ﻿using E_Commerce_Playground.Data;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Playground.Controllers
 {
-    public class ProductsController : Controller
+    public class ProfileController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProductsController(AppDbContext context)
+        public ProfileController(AppDbContext context)
         {
-            _context = context;
-        }
-        
+            _context= context;
 
-        
+        }
+
+
         public IActionResult Index()
         {
 
-            var data = _context.Products.ToList();
-
+            var data = _context.Users.ToList();
             return View(data);
         }
-
-
     }
 }

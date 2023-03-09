@@ -1,4 +1,5 @@
-﻿@model IEnumerable<User>
+﻿@using E_Commerce_Playground.Controllers;
+
 
 @{
     ViewData["Title"] = "Home Page";
@@ -9,38 +10,20 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
 
-@*
+    @inject IHttpContextAccessor context
+    @{
 
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
+        var cookieValue = context.HttpContext.Request.Cookies.ToList();
+        var data = cookieValue;
+        <h1>@data</h1>
 
-            <table>
-                <thead>
-                </thead>
+   
 
-                <tbody>
-
-
-                    @foreach (var item in Model)
-                    {
-
-                        <tr>
-                            <div class="text-black"><h1>@item.UserName</h1></div>
-                        </tr>
+       
 
 
 
 
-                    }
 
 
-                </tbody>
-
-            </table>
-
-
-        </div>
-*@
-
-
-    </div>
+    }
