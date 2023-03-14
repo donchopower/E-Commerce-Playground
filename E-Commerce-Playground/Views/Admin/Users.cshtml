@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<User>
+@{
+
+    <div class="container">
+    <div class="table">
+    <div class="row">
+                <div class="col-sm">Id</div> <div class=" col-sm">Username</div><div class="col-sm">Email</div><div class="col-sm">Account Level</div>
+    </div>
+    @foreach(var item in Model)
+    {
+            <div class="row">
+                <div class="col-sm">@item.UserId</div> <div class="col-sm">@item.UserName</div><div class="col-sm">@item.Email</div><div class="col-sm">@item.AccountLevel</div>
+            </div>
+    }
+    
+    
+    
+    
+    </div>
+    
+    
+    </div>
+}

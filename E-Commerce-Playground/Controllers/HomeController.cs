@@ -36,7 +36,7 @@ namespace E_Commerce_Playground.Controllers
                if (contains)
                 {
                     username = d.Value.ToString();
-                    return View(username);
+                    return View();
                 }
                 return View();
                 

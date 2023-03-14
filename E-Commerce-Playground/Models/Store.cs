@@ -18,6 +18,6 @@ namespace E_Commerce_Playground.Models
         public List<Stores_Products> StoreProducts { get; set; }
 
         public List<Employee> Employees { get; set; }
-
+     
     }
 }

@@ -137,17 +137,19 @@ namespace E_Commerce_Playground.Data
                             Password = "Admin",
                             Email = "na@dmin0.poshtata",
                             PhoneNumber = "000000000",
-                             ProfilePictureURL = "asd"
+                             ProfilePictureURL = "asd",
+                            AccountLevel = AccountType.Admin
                         },
                         new User()
                         {
                             UserName = "user",
-                            Password = "asdasd",
+                            Password = "user",
                             Email = "p0sht@.me",
                             PhoneNumber = "00000000",
-                            ProfilePictureURL = "asds"
+                            ProfilePictureURL = "asds",
+                           AccountLevel = AccountType.User
                         },
-                    });
+                    });;
                     context.SaveChanges();
 
                 }

@@ -25,6 +25,8 @@ namespace E_Commerce_Playground.Models
         [Required]
         public decimal Salary { get; set; }
 
+
+
      
     }
 }

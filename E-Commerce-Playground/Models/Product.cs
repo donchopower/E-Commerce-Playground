@@ -25,6 +25,7 @@ namespace E_Commerce_Playground.Models
         //Relations
 
         public List<Stores_Products> StoreProducts { get; set; }
+   
 
 
     }
